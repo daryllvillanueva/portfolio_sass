@@ -33,6 +33,11 @@ body {
   font-size: 1.6rem;
 }
 
+body.open {
+  overflow: hidden;
+  height: 100vh;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -88,6 +93,14 @@ p {
 
 .text-footer {
   color: #e1684d;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-white {
+  color: #fff;
 }
 
 .flex {
@@ -400,6 +413,45 @@ p {
   z-index: 0;
 }
 
+.header_wrapper ul.open {
+  visibility: visible;
+  opacity: 1;
+}
+.header ul {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20%;
+  visibility: hidden;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+@media (min-width: 42rem) {
+  .header ul {
+    position: static;
+    background-color: unset;
+    padding: unset;
+    width: auto;
+    height: unset;
+    flex-direction: row;
+    visibility: visible;
+    opacity: 1;
+  }
+  .header ul li a {
+    font-size: 1.7rem;
+  }
+}
+.header ul a {
+  font-size: 3rem;
+}
+
 .banner_wrapper {
   min-height: 80rem;
   display: flex;
@@ -466,7 +518,7 @@ p {
   background-color: #353836;
   position: relative;
 }
-.skills .skillbar::after {
+.skills .skillbar::before {
   content: "";
   position: absolute;
   top: 0;
@@ -475,11 +527,14 @@ p {
   height: 100%;
   background-color: #f16b4e;
 }
-.skills .skillbar .w-50::before {
-  width: 50%;
+.skills .skillbar.w-95::before {
+  width: 95%;
 }
-.skills .skillbar .w-40::before {
-  width: 40%;
+.skills .skillbar.w-90::before {
+  width: 90%;
+}
+.skills .skillbar.w-85::before {
+  width: 85%;
 }
 
 .portfolio_img {
@@ -513,7 +568,16 @@ p {
 
 .contact {
   padding-top: 1.5rem;
-  padding-bottom: 6rem;
+  padding-bottom: 4rem;
+}
+.contact .send_mssg {
+  margin-top: 4rem;
+}
+.contact .btn_mssg {
+  background-color: #fff;
+  color: #f16b4e;
+  padding: 1.7rem 3rem;
+  font-size: 1.2rem;
 }
 .contact h2 {
   font-size: clamp(1rem, 7vw, 4rem);
@@ -526,9 +590,6 @@ p {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   grid-column-gap: 5rem;
-}
-.contact_info a {
-  margin-top: 5rem;
 }
 .contact_list {
   display: flex;

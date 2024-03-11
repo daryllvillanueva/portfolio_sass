@@ -11,17 +11,17 @@
 
     <header class="header py-2">
         <div class="container">
-            <div class="header_wrapper flex justify-between">
-                <a href="#">A</a>
-                <ul class="flex gap-2">
+            <div class="header_wrapper flex justify-between items-center">
+                <a href="#" class="header_logo text-accent">A</a>
+                <ul class="flex gap-2" id="menu">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#" class="text-accent">About</a></li>
                     <li><a href="#">Skills</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-                <i>icon</i>
+                <i class="fas fa-bars" id="toggleMenu"></i>
             </div>
         </div>
     </header>
@@ -91,14 +91,14 @@
                         <li>Adobe Photoshop</li>
                         <li>90%</li>
                     </ul>
-                    <div class="skillbar w-50"></div>
+                    <div class="skillbar w-90"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
                         <li>Photography</li>
                         <li>90%</li>
                     </ul>
-                    <div class="skillbar w-40"></div>
+                    <div class="skillbar w-90"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
@@ -112,35 +112,35 @@
                         <li>Adobe Premiere Pro</li>
                         <li>95%</li>
                     </ul>
-                    <div class="skillbar"></div>
+                    <div class="skillbar w-95"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
                         <li>Adobe After Effects</li>
                         <li>90%</li>
                     </ul>
-                    <div class="skillbar"></div>
+                    <div class="skillbar w-90"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
                         <li>Adobe XD</li>
                         <li>95%</li>
                     </ul>
-                    <div class="skillbar"></div>
+                    <div class="skillbar w-95"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
                         <li>Autodesk 3ds Max</li>
                         <li>85%</li>
                     </ul>
-                    <div class="skillbar"></div>
+                    <div class="skillbar w-85"></div>
                 </div>
                 <div class="bar mb-5">
                     <ul class="flex justify-between">
                         <li>Cinema 4D</li>
                         <li>85%</li>
                     </ul>
-                    <div class="skillbar"></div>
+                    <div class="skillbar w-85"></div>
                 </div>
             </div>
         </div>
@@ -224,12 +224,9 @@
         </div>
     </section>
 
-
     <section class="contact bg-footer">
         <div class="container">
-            <div class="contact_wrapper">
-                <h2 class="text-center">Contact me</h2>
-            </div>
+            <h2 class="text-center">Contact me</h2>
             <div class="contact_info">
                 <div class="contact_list">
                     <i class="fa-solid fa-mobile-screen fa-icons"></i>
@@ -252,10 +249,25 @@
                         <small>Dhaka Bangladesh</small>
                     </div>
                 </div>
-                <a href="#" class="btn_contact">SEND MESSAGE</a>
             </div>
+            <div class="send_mssg text-center"><a href="#" class="btn_mssg">SEND MESSAGE</a></div>
         </div>
+        
     </section>
+
+    <script>
+        const toggleMenu = document.querySelector("#toggleMenu");
+        const menu = document.querySelector("#menu");
+        const body = document.querySelector("body");
+
+        toggleMenu.addEventListener('click', () => {
+            menu.classList.toggle("open");
+            body.classList.toggle("open");
+        })
+
+
+
+    </script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ $colors: (
     "secondary" : $clr-secondary,
     "accent" : $clr-accent,
     "footer" :$clr-footer,
-    "white" : $clr-light
+    "white" : $clr-white
 );
 
 @each $key, $val in $colors {
